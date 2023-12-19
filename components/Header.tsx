@@ -1,10 +1,25 @@
+import Logo from "./nav/Logo"
+import MobileNavbar from "./nav/MobileNavbar"
+import Navbar from "./nav/Navbar"
 import { ThemeToggler } from "./theme/ThemeToggler"
 
 const Header = () => {
   return (
-    <div>
-      <ThemeToggler />
-    </div>
+    <header>
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center">
+          <Logo />
+
+          <div className="flex items-center gap-x-6">
+            <Navbar />
+            <ThemeToggler />
+            <div className="xl:hidden">
+              <MobileNavbar />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
   )
 }
 
