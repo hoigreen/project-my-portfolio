@@ -16,8 +16,8 @@ const Template = ({ children }: { children: React.ReactNode }) => {
     <>
       <motion.main
         variants={variants}
-        initial='hidden'
-        animate='enter'
+        initial='enter'
+        animate='hidden'
         transition={{ type: 'linear', delay: 0.15, duration: 0.4 }}
       >
         {children}
@@ -29,7 +29,7 @@ const Template = ({ children }: { children: React.ReactNode }) => {
       >
       </span>
 
-      <div className='h-[4000px]'></div>
+      <div className='h-[3000px]'></div>
     </>
   )
 }
