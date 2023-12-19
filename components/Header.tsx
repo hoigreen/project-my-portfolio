@@ -11,7 +11,11 @@ const Header = () => {
           <Logo />
 
           <div className="flex items-center gap-x-6">
-            <Navbar />
+            <Navbar
+              containerStyles="hidden xl:flex gap-x-8 items-center"
+              linkStyles=""
+              underlineStyles=""
+            />
             <ThemeToggler />
             <div className="xl:hidden">
               <MobileNavbar />
