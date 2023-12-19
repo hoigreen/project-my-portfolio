@@ -2,9 +2,15 @@
 
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
 
-const ThemeProvider = ({ children, ...props }: { children: React.ReactNode }) => {
+interface ThemeProviderProps {
+  children: React.ReactNode;
+  attribute: string;
+  defaultTheme: string;
+}
+
+const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, attribute, defaultTheme }) => {
   return (
-    <NextThemesProvider {...props}>
+    <NextThemesProvider attribute={attribute} defaultTheme={defaultTheme}>
       {children}
     </NextThemesProvider>
   )

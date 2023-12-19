@@ -3,6 +3,7 @@ import { Roboto } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { ThemeProvider } from '@/context/ThemeContext'
 
 const roboto = Roboto({ weight: "400", subsets: ['vietnamese'] })
 
@@ -13,11 +14,13 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children, }: { children: React.ReactNode }) => {
   return (
-    <html lang="en">
+    <html lang="en" suppressContentEditableWarning>
       <body className={roboto.className}>
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider attribute='class' defaultTheme='light'>
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )
