@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { motion } from 'framer-motion'
 import React from 'react'
 
 interface NavbarProps {
@@ -25,6 +26,15 @@ const Navbar = ({ containerStyles, linkStyles, underlineStyles }: NavbarProps) =
           href={link.path}
           className={`${linkStyles}`}
         >
+          {link.path === path &&
+            <motion.main
+              initial={{ y: '-100%' }}
+              animate={{ y: 0 }}
+              transition={{ type: 'linear' }}
+              layoutId='underline'
+              className={`${underlineStyles}`}
+            />
+          }
           {link.name}
         </Link>
       )
