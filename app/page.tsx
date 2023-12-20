@@ -12,7 +12,7 @@ export default function Home() {
             <div className='flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left'>
               <div className='text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]'>Fullstack Web Developer</div>
               <h1 className='h1 mb-4'>Hello, my name is Truong Quoc Hoi</h1>
-              <p className='subtitle max-w-[490px] mx-auto xl:mb-0'>dsiofdsfisd dsofidsfsoi sdasdasd foifsdoi sfsdoifdiso sdfosdifsdio</p>
+              <p className='subtitle max-w-[490px] mx-auto xl:mb-0 xl:mx-0 pb-4'>dsiofdsfisd dsofidsfsoi sdasdasd foifsdoi sfsdoifdiso sdfosdifsdio</p>
 
               <div className='flex flex-col gap-3 md:flex-row mx-auto xl:mx-0 mb-12'>
                 <Link href='/contact'>
