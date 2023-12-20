@@ -2,10 +2,10 @@ import { RiArrowDownSLine } from 'react-icons/ri'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <section>
+    <main className="">
+      <section className="py-12 xl:py-23 h-[84vh] xl:pt-28 bg-home bg-no-repeat bg-cover bg-bottom ">
         <div className="container mx-auto">
-          <div>
+          <div className='flex justify-between gap-x-8'>
             Text
           </div>
 
