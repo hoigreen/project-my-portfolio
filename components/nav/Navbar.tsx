@@ -21,9 +21,10 @@ const Navbar = ({ containerStyles, linkStyles, underlineStyles }: NavbarProps) =
 
   return (
     <nav className={`${containerStyles}`}>
-      {links.map(link =>
+      {links.map((link, index) =>
         <Link
           href={link.path}
+          key={index}
           className={`${linkStyles}`}
         >
           {link.path === path &&
