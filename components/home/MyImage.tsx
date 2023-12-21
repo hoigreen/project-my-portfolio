@@ -9,8 +9,8 @@ interface MyImageProps {
 const MyImage = (props: MyImageProps) => {
   const { containerStyle, imageSrc } = props
   return (
-    <div className={`overflow-hidden ${containerStyle}`}>
-      <Image src={imageSrc} fill priority className="z-50" alt='hoigreen' />
+    <div className={`${containerStyle}`}>
+      <Image src={imageSrc} fill priority alt='hoigreen' />
     </div>
   )
 }

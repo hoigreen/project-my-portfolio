@@ -1,9 +1,10 @@
+import BadgeProfile from '@/components/home/BadgeProfile'
 import MyImage from '@/components/home/MyImage'
 import Social from '@/components/home/Social'
 import { Button } from '@/components/ui/button'
 import { Download, Send } from 'lucide-react'
 import Link from 'next/link'
-import { RiArrowDownSLine } from 'react-icons/ri'
+import { RiArrowDownSLine, RiBook2Fill, RiBriefcase4Fill } from 'react-icons/ri'
 
 export default function Home() {
   return (
@@ -31,12 +32,29 @@ export default function Home() {
               />
             </div>
 
+
             <div className='hidden xl:flex relative'>
-              <div className='bg-home_shape2_light dark:bg-home_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2'></div>
+              <BadgeProfile
+                containerStyles='absolute top-[12%] -left-[5rem]'
+                icon={<RiBriefcase4Fill />}
+                endCountNum={0.5}
+                badgeText='Year of Experience'
+              />
+
+              <BadgeProfile
+                containerStyles='absolute top-[76%] -right-[5rem]'
+                icon={<RiBook2Fill />}
+                endCountNum={4}
+                badgeText='Years in University'
+              />
+
+              <div className='bg-home_shape2_light dark:bg-home_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2'>
+              </div>
+
               <MyImage
-                containerStyle='bg-home_shape shape w-[510px] h-[462px] bg-no-repeat' 
+                containerStyle='bg-home_shape shape w-[510px] h-[462px] bg-no-repeat'
                 imageSrc='/home/developer.png'
-                />
+              />
             </div>
           </div>
 
