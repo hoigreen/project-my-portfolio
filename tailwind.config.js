@@ -72,7 +72,10 @@ module.exports = {
       },
 
       backgroundImage: {
-        home: 'url(/home/home-bg.png)'
+        home: 'url(/home/home-bg.png)',
+        home_shape: 'url(/home/shape-1.svg)',
+        home_shape2_light: 'url(/home/shape-2-light.svg)',
+        home_shape2_dark: 'url(/home/shape-2-dark.svg)',
       }
     },
   },
