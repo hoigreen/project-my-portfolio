@@ -6,9 +6,9 @@ const Logo = () => {
   return (
     <Link href='/'>
       <Image
-        src='/logo.svg'
-        width={54}
-        height={54}
+        src='/logo.png'
+        width={100}
+        height={40}
         alt='Logo of my portfolio page'
       />
     </Link>
