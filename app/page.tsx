@@ -1,3 +1,5 @@
+import MyImage from '@/components/home/MyImage'
+import Social from '@/components/home/Social'
 import { Button } from '@/components/ui/button'
 import { Download, Send } from 'lucide-react'
 import Link from 'next/link'
@@ -22,9 +24,20 @@ export default function Home() {
                   <Button variant='secondary' className='gap-x-2'>Get my CV <Download size={16} /></Button>
                 </Link>
               </div>
+
+              <Social
+                containerStyles='flex gap-x-6 mx-auto xl:mx-0'
+                iconStyles='text-foreground text-[22px] hover: text-primary transition-all'
+              />
             </div>
 
-            <div className='hidden xl:flex relative'>Image</div>
+            <div className='hidden xl:flex relative'>
+              <div className='bg-home_shape2_light dark:bg-home_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2'></div>
+              <MyImage
+                containerStyle='bg-home_shape shape w-[510px] h-[462px] bg-no-repeat' 
+                imageSrc='/home/developer.png'
+                />
+            </div>
           </div>
 
           <div className='hidden md:flex absolute left-2/4 bottom-44 xl:bottom-12 animate-bounce'>
