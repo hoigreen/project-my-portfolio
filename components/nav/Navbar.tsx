@@ -7,7 +7,7 @@ import React from 'react'
 interface NavbarProps {
   containerStyles: string,
   linkStyles: string,
-  underlineStyles: string,
+  underlineStyles?: string,
 }
 
 const links = [
