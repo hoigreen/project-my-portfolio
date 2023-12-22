@@ -29,7 +29,7 @@ const infoData = [
 
 const qualificationsData = [
   {
-    title: 'Education',
+    title: 'education',
     data: [
       {
         university: 'University of Transports Ho Chi Minh City (UTH)',
@@ -135,8 +135,20 @@ const skillsData = [
   }
 ]
 
+const certificationsData = [
+  {
+    name: 'HTML, CSS, Javascript. (F8 - fullstack.edu.vn)',
+    time: '2021'
+  },
+  {
+    name: 'Javascript DSA (freecodecamp.org)',
+    time: '2022'
+  },
+]
+
 export {
   infoData,
   qualificationsData,
   skillsData,
+  certificationsData
 }
