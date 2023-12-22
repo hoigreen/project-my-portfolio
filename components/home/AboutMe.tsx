@@ -2,7 +2,21 @@
 import React from 'react'
 import MyImage from './MyImage';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
-import { infoData } from '@/lib/datas/about-me';
+import { certificationsData, infoData, qualificationsData } from '@/lib/datas/about-me';
+import { Briefcase, GraduationCap } from 'lucide-react';
+
+interface ExperienceDataObject {
+  company: string;
+  position: string;
+  time: string;
+}
+
+interface EducationDataObject {
+  university: string;
+  qualification: string;
+  years: string;
+}
+
 
 const AboutMe = () => {
   const getData = (arr: any, title: string) => {
@@ -48,9 +62,80 @@ const AboutMe = () => {
                         </div>
                       )}
                     </div>
+
+                    <div className='flex flex-col gap-y-2 mb-12'>
+                      <div className='text-primary'>Language Skills</div>
+                      <div className="border-b border-border"></div>
+                      <div>Certificate of English B1</div>
+                    </div>
+
+                    <div className='flex flex-col gap-y-2 mb-12'>
+                      <div className='text-primary'>Certifications</div>
+                      <div className="border-b border-border"></div>
+                      {certificationsData.map((item, index) =>
+                        <div key={index} className='flex justify-between items-center'>
+                          <div>{item.name}</div>
+                          <p className='italic'>{item.time}</p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </TabsContent>
-                <TabsContent value='qualifications' >Qualifications Info</TabsContent>
+
+                <TabsContent value='qualifications' >
+                  <div>
+                    <h3 className="h3 mb-8 text-center xl:text-left">My Beautiful Journey</h3>
+                    <div className='grid xl:grid-cols-2 gap-y-12'>
+                      <div className='flex flex-col gap-y-6'>
+                        <div className='flex gap-x-4 items-center text-[22px] text-primary'>
+                          <GraduationCap size={28} />
+                          <h4 className="capitalize">
+                            {getData(qualificationsData, 'education').title}
+                          </h4>
+                        </div>
+
+                        <div className='flex flex-col gap-y-8'>
+                          {getData(qualificationsData, 'education').data.map((item: EducationDataObject, i: number) =>
+                            <div className='flex gap-x-8 group' key={i}>
+                              <div className="h-[84px] w-[1px] bg-border relative ml-2">
+                                <div className="w-[11px] h-[11px] rounded-full bg-primary a absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-300"></div>
+                              </div>
+                              <div>
+                                <div className='font-semibold text-xl leading-2 mb-2'>{item.university}</div>
+                                <div className='text-lg leading-none text-muted-foreground mb-4'>{item.qualification}</div>
+                                <div className='text-base'>{item.years}</div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className='flex flex-col gap-y-6'>
+                        <div className='flex gap-x-4 items-center text-[22px] text-primary'>
+                          <Briefcase size={28}/>
+                          <h4 className="capitalize">
+                            {getData(qualificationsData, 'experience').title}
+                          </h4>
+                        </div>
+
+                        <div className='flex flex-col gap-y-8'>
+                          {getData(qualificationsData, 'experience').data.map((item: ExperienceDataObject, i: number) =>
+                            <div className='flex gap-x-8 group' key={i}>
+                              <div className="h-[84px] w-[1px] bg-border relative ml-2">
+                                <div className="w-[11px] h-[11px] rounded-full bg-primary a absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-300"></div>
+                              </div>
+                              <div>
+                                <div className='font-semibold text-xl leading-2 mb-2'>{item.company}</div>
+                                <div className='text-lg leading-none text-muted-foreground mb-4'>{item.position}</div>
+                                <div className='text-base'>{item.time}</div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
                 <TabsContent value='skills' >Skills Info</TabsContent>
               </div>
             </Tabs>
