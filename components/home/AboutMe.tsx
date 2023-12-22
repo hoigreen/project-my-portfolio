@@ -2,8 +2,9 @@
 import React from 'react'
 import MyImage from './MyImage';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
-import { certificationsData, infoData, qualificationsData, skillsData } from '@/lib/datas/about-me';
+import { certificationsData, infoData, qualificationsData, skillsData, toolsData } from '@/lib/datas/about-me';
 import { Briefcase, GraduationCap } from 'lucide-react';
+import Image from 'next/image';
 
 interface ExperienceDataObject {
   company: string;
@@ -156,6 +157,24 @@ const AboutMe = () => {
                               </div>
                             )}
                           </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className='text-center xl:text-left'>
+                    <h3 className='h3 mb-8'>Tools I use</h3>
+
+                    <div className='flex gap-x-12 justify-center xl:justify-start items-center'>
+                      {toolsData.map((item, i) =>
+                        <div key={i}>
+                          <Image
+                            src={item.imagePath}
+                            width={50}
+                            height={50}
+                            priority
+                            alt=''
+                          />
                         </div>
                       )}
                     </div>
