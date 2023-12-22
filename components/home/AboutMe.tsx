@@ -2,7 +2,7 @@
 import React from 'react'
 import MyImage from './MyImage';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
-import { certificationsData, infoData, qualificationsData } from '@/lib/datas/about-me';
+import { certificationsData, infoData, qualificationsData, skillsData } from '@/lib/datas/about-me';
 import { Briefcase, GraduationCap } from 'lucide-react';
 
 interface ExperienceDataObject {
@@ -17,6 +17,9 @@ interface EducationDataObject {
   years: string;
 }
 
+interface SkillsDataObject {
+  name: string;
+}
 
 const AboutMe = () => {
   const getData = (arr: any, title: string) => {
@@ -112,7 +115,7 @@ const AboutMe = () => {
 
                       <div className='flex flex-col gap-y-6'>
                         <div className='flex gap-x-4 items-center text-[22px] text-primary'>
-                          <Briefcase size={28}/>
+                          <Briefcase size={28} />
                           <h4 className="capitalize">
                             {getData(qualificationsData, 'experience').title}
                           </h4>
@@ -136,7 +139,28 @@ const AboutMe = () => {
                     </div>
                   </div>
                 </TabsContent>
-                <TabsContent value='skills' >Skills Info</TabsContent>
+
+                <TabsContent value='skills' >
+                  <div className='text-center xl:text-left'>
+                    <h3 className='h3 mb-8'>My Skills</h3>
+
+                    <div className='grid grid-cols-1 xl:grid-cols-2'>
+                      {skillsData.map((type, index) =>
+                        <div className='mb-16' key={index}>
+                          <div className='text-xl font-semibold mb-2 text-primary'>{type.title}</div>
+                          <div className='border-b border-border mb-4'></div>
+                          <div>
+                            {type.data.map((item: any, i: number) =>
+                              <div key={i} className='w-2/4 text-center xl:text-left mx-auto xl:mx-0'>
+                                <div>{item.name}</div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </TabsContent>
               </div>
             </Tabs>
           </div>

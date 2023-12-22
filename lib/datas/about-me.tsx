@@ -115,7 +115,7 @@ const skillsData = [
         name: 'MySQL',
       },
       {
-        name: 'MSSQL Server',
+        name: 'MS SQL Server',
       }
     ]
   },
