@@ -135,6 +135,24 @@ const skillsData = [
   }
 ]
 
+const toolsData = [
+  {
+    imagePath: "/about/vscode.svg"
+  },
+  {
+    imagePath: "/about/vs.svg"
+  },
+  {
+    imagePath: "/about/ssms.svg"
+  },
+  {
+    imagePath: "/about/studio-3t.svg"
+  },
+  {
+    imagePath: "/about/git.svg"
+  }
+]
+
 const certificationsData = [
   {
     name: 'HTML, CSS, Javascript. (F8 - fullstack.edu.vn)',
@@ -150,5 +168,6 @@ export {
   infoData,
   qualificationsData,
   skillsData,
+  toolsData,
   certificationsData
 }
