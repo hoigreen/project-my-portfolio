@@ -31,6 +31,7 @@
     "react-hook-form": "^7.49.2",
     "react-i18next": "^13.5.0",
     "react-icons": "^4.12.0",
+    "react-pdf": "^7.6.0",
     "swiper": "^11.0.5",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7",
