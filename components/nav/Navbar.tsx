@@ -3,18 +3,13 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import React from 'react'
+import { links } from '@/lib/datas/nabar-links'
 
 interface NavbarProps {
   containerStyles: string,
   linkStyles: string,
   underlineStyles?: string,
 }
-
-const links = [
-  { path: '/', name: 'Home' },
-  { path: '/projects', name: 'My Projects' },
-  { path: '/contact', name: 'Contact' },
-]
 
 const Navbar = ({ containerStyles, linkStyles, underlineStyles }: NavbarProps) => {
   const path = usePathname()
