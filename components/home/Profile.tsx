@@ -21,7 +21,7 @@ const Profile = () => {
               <Link href='/contact'>
                 <Button className='gap-x-2'>Contact for work <Send size={16} /></Button>
               </Link>
-              <Link href='/contact'>
+              <Link href='/cv/CV - TruongQuocHoi - Fullstack Web Developer.pdf' target='_blank'>
                 <Button variant='secondary' className='gap-x-2'>Get my CV <Download size={16} /></Button>
               </Link>
             </div>
