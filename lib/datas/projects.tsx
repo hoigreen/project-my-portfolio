@@ -7,7 +7,7 @@ const projectsData = [
     technology: [
       "Using ReactJS, CSS, SCSS module to build front-end for website.",
       "Using MongoDB to storage database.",
-      "Using NodeJS and framework ExpressJS to con¦gure for server on website."
+      "Using NodeJS and framework ExpressJS to configure for server on website."
     ],
     link: "https://shoptech.website/",
     github: 'https://github.com/hoigreen/project-ecommerce-shop'
