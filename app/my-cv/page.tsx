@@ -14,7 +14,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 const MyCV = () => {
-  const [widthScreen, setWidthScreen] = useState<number>(window.innerWidth)
+  const [widthScreen, setWidthScreen] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 0)
 
   useEffect(() => setWidthScreen(window.innerWidth), []);
 
