@@ -12,7 +12,7 @@ const Cta = () => {
             Ready to elevate your digital experience?
           </h2>
 
-          <p className="subtitle text-center">Let's collaborate on innovative software solutions that drive results. Whether you have a specific project in mind or just want to explore the possibilities, I'm here to help. Contact me to start the conversation.
+          <p className="subtitle text-center">Let&apos;s collaborate on innovative software solutions that drive results. Whether you have a specific project in mind or just want to explore the possibilities, I&apos;m here to help. Contact me to start the conversation.
           </p>
 
           <Link href='/contact'>

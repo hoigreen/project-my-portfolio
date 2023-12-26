@@ -16,7 +16,7 @@ const Profile = () => {
             <div className='text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]'>Fullstack Web Developer</div>
             <h1 className='h1 mb-4'>Hello, my name is Truong Quoc Hoi</h1>
             <p className='subtitle max-w-[490px] mx-auto xl:mb-0 xl:mx-0 pb-4'>
-              Hello and welcome to my portfolio! I'm a Fullstack Web Developer.
+              Hello and welcome to my portfolio! I&apos;m a Fullstack Web Developer.
               <br />
               <br />
               Proficient in both front-end and back-end technologies, I specialize in creating seamless and engaging user experiences.
