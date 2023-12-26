@@ -53,7 +53,7 @@ const AboutMe = () => {
               <div className='text-lg mt-12 xl:mt-8'>
                 <TabsContent value='personal' >
                   <div className='text-center xl:text-left'>
-                    <h3 className='h3 mb-4'>Unmatched Service Quality for Over 10 Years</h3>
+                    <h3 className='h3 mb-4'>LET ME INTRODUCE MYSELF</h3>
                     <p className='subtitle max-w-xl mx-auto xl:mx-0'>
                       I specialize in crafting intuitive website with cutting-edge technology, delivering dynamic and engaging user experiences.
                     </p>
