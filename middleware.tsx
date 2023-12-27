@@ -18,14 +18,20 @@ function getLocale(request: Request): string {
 }
 
 export function middleware(request: NextRequest) {
-  let locale = getLocale(request) ?? defaultLocale
-  const pathname = request.nextUrl.pathname
+  const { pathname } = request.nextUrl
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  )
 
+  if (pathnameHasLocale) return
+
+  let locale = getLocale(request)
+  request.nextUrl.pathname = `/${locale}${pathname}`
   const newUrl = new URL(`/${locale}${pathname}`, request.nextUrl);
 
   // e.g. incoming request is /products
   // The new URL is now /en/products
-  return NextResponse.rewrite(newUrl)
+  return NextResponse.redirect(request.nextUrl)
 }
 
 export const config = {
@@ -33,6 +39,6 @@ export const config = {
     // Skip all internal paths (_next)
     '/((?!_next|api|favicon.ico).*)',
     // Optional: only run on root (/) URL
-    // '/'
+    '/'
   ],
 }
