@@ -6,6 +6,8 @@ interface DictionaryEntry {
   profileButtonCV: string
   profileBadgeExperience: string
   profileBadgeUniversity: string
+
+  logoImageAlt: string
 }
 
 export const dictionary: Record<string, DictionaryEntry> = {
@@ -17,7 +19,8 @@ export const dictionary: Record<string, DictionaryEntry> = {
     profileButtonContact: "Contact for work",
     profileButtonCV: 'Get My CV',
     profileBadgeExperience: 'Year Of Experience',
-    profileBadgeUniversity: 'Year Of University'
+    profileBadgeUniversity: 'Year Of University',
+    logoImageAlt: 'Logo my portfolio'
   },
   vi: {
     profilePosition: "Lập trình viên Full-stack",
@@ -27,6 +30,7 @@ export const dictionary: Record<string, DictionaryEntry> = {
     profileButtonContact: "Liên hệ với tớ ngay",
     profileButtonCV: 'Tải xuống CV của tớ',
     profileBadgeExperience: 'Năm kinh nghiệm',
-    profileBadgeUniversity: 'Năm Đại học'
+    profileBadgeUniversity: 'Năm Đại học',
+    logoImageAlt: 'Logo trang portfolio của tôi'
   }
 }

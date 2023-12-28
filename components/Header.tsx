@@ -7,7 +7,7 @@ import Navbar from "./nav/Navbar"
 import { ThemeToggler } from "./theme/ThemeToggler"
 import { usePathname } from "next/navigation"
 
-const Header = () => {
+const Header = ({ params }: { params: { lang: string } }) => {
   const [header, setHeader] = useState(false)
   const pathname = usePathname()
 
@@ -23,7 +23,7 @@ const Header = () => {
     <header className={`${header ? 'py-4 bg-white shadow-lg dark:bg-accent' : 'py-6 dark:bg-transparent'} sticky top-0 z-30 transition-all ${pathname === '/' && 'bg-[#e6f3da]'}`}>
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
-          <Logo />
+          <Logo lang={params.lang} />
 
           <div className="flex items-center gap-x-6">
             <Navbar
