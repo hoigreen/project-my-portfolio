@@ -10,10 +10,10 @@ export function Switch() {
   return (
     <>
       <Button type="button" onClick={() => changeLocale('en')}>
-        EN
+        ENGLISH
       </Button>
-      <Button type="button" onClick={() => changeLocale('fr')}>
-        FR
+      <Button type="button" onClick={() => changeLocale('vi')}>
+        VIỆT NAM
       </Button>
     </>
   );

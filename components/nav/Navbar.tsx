@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import React from 'react'
 import { links } from '@/lib/datas/nabar-links'
+import { Switch } from '../locale/SwitchLanguage'
 
 interface NavbarProps {
   lang: string,
@@ -17,6 +18,7 @@ const Navbar = ({ lang, containerStyles, linkStyles, underlineStyles }: NavbarPr
 
   return (
     <nav className={`${containerStyles}`}>
+      <Switch />
       {links[lang]?.map((link, index) =>
         <Link
           href={link.path}
