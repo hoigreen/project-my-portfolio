@@ -1,47 +1,15 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { match } from '@formatjs/intl-localematcher';
-import Negotiator from 'negotiator';
+import { createI18nMiddleware } from 'next-international/middleware';
+import type { NextRequest } from 'next/server';
 
-let headers = { 'accept-language': 'en-US,en;q=0.5' }
-let languages = new Negotiator({ headers }).languages()
-
-let locales = ['en', 'vi'];
-export const defaultLocale = 'en';
-
-function getLocale(request: Request): string {
-  const headers = new Headers(request.headers)
-  const acceptLanguage = headers.get("accept-language")
-  if (acceptLanguage) {
-    headers.set('accept-language', acceptLanguage.replaceAll("_", "-"))
-  }
-
-  const headersObject = Object.fromEntries(headers.entries());
-  const languages = new Negotiator({ headers: headersObject }).languages();
-  return match(languages, locales, defaultLocale);
-}
+const I18nMiddleware = createI18nMiddleware({
+  locales: ['en', 'vi'],
+  defaultLocale: 'en',
+});
 
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  )
-
-  if (pathnameHasLocale) return
-
-  let locale = getLocale(request)
-  request.nextUrl.pathname = `/${locale}${pathname}`
-  const newUrl = new URL(`/${locale}${pathname}`, request.nextUrl);
-
-  // e.g. incoming request is /products
-  // The new URL is now /en/products
-  return NextResponse.redirect(request.nextUrl)
+  return I18nMiddleware(request);
 }
 
 export const config = {
-  matcher: [
-    // Skip all internal paths (_next)
-    "/((?!api|static|.*\\..*|_next).*)",
-    // Optional: only run on root (/) URL
-    // '/',
-  ],
-}
+  matcher: ['/((?!api|static|.*\\..*|_next|favicon.ico|robots.txt).*)'],
+};
