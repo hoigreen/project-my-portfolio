@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const Logo = ({ lang }: { lang: string }) => {
+const Logo = () => {
   return (
     <Link href='/'>
       <Image

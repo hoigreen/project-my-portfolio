@@ -7,19 +7,19 @@ import { links } from '@/lib/datas/nabar-links'
 import { Switch } from '../locale/SwitchLanguage'
 
 interface NavbarProps {
-  lang: string,
+  locale: string,
   containerStyles: string,
   linkStyles: string,
   underlineStyles?: string,
 }
 
-const Navbar = ({ lang, containerStyles, linkStyles, underlineStyles }: NavbarProps) => {
+const Navbar = ({ locale, containerStyles, linkStyles, underlineStyles }: NavbarProps) => {
   const path = usePathname()
 
   return (
     <nav className={`${containerStyles}`}>
       <Switch />
-      {links[lang]?.map((link, index) =>
+      {links[locale]?.map((link, index) =>
         <Link
           href={link.path}
           key={index}

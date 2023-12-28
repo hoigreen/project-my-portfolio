@@ -5,7 +5,7 @@ import Logo from './Logo'
 import Navbar from './Navbar'
 import Social from '../home/Social'
 
-const MobileNavbar = () => {
+const MobileNavbar = ({ locale }: { locale: string }) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -16,6 +16,7 @@ const MobileNavbar = () => {
           <div className='flex flex-col items-center gap-y-8'>
             <Logo />
             <Navbar
+              locale={locale}
               containerStyles='flex w-full flex-col items-end gap-y-6'
               linkStyles='text-lg py-4 w-full text-right'
             />
