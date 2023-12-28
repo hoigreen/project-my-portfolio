@@ -4,7 +4,6 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/context/ThemeContext'
-import { defaultLocale } from '@/middleware'
 
 const playpenSans = Playpen_Sans({ weight: "400", subsets: ['vietnamese'] })
 
@@ -21,13 +20,13 @@ export async function generateStaticParams() {
 const RootLayout = ({ children, params }: { children: React.ReactNode, params: { lang: string } }) => {
   return (
     <html
-      lang={params.lang ?? defaultLocale}
+      lang={params.lang}
       suppressContentEditableWarning
     >
       <head />
       <body className={playpenSans.className}>
         <ThemeProvider attribute='class' defaultTheme='light'>
-          <Header lang={params.lang ?? defaultLocale} />
+          <Header lang={params.lang} />
           {children}
           <Footer />
         </ThemeProvider>
