@@ -11,7 +11,7 @@ export default function Page({ params: { locale } }: { params: { locale: string 
       <Provider locale={locale}>
         <Profile />
         <AboutMe locale={locale} />
-        <MyRoles />
+        <MyRoles locale={locale} />
         <ProjectFeatured />
         <Cta />
       </Provider>
