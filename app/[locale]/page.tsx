@@ -10,7 +10,7 @@ export default function Page({ params: { locale } }: { params: { locale: string 
     <main>
       <Provider locale={locale}>
         <Profile />
-        <AboutMe />
+        <AboutMe locale={locale} />
         <MyRoles />
         <ProjectFeatured />
         <Cta />

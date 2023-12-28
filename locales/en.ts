@@ -8,5 +8,13 @@ export default {
   profileButtonCV: 'Get My CV',
   profileBadgeExperience: 'Year Of Experience',
   profileBadgeUniversity: 'Year Of University',
-  logoImageAlt: 'Logo my portfolio'
+  logoImageAlt: 'Logo my portfolio',
+  aboutHeader: 'About me',
+  aboutButtonPersonal: 'Personal Information',
+  aboutButtonQualification: 'Qualificatión Information',
+  aboutButtonSkills: 'Skills Information',
+  aboutPersonalHeader: "LET ME INTRODUCE MYSELF",
+  aboutPersonalDescription: "I specialize in creating intuitive websites with cutting-edge technology, building great functionalities to deliver a dynamic and engaging user experience.",
+  aboutPersonalLanguageSkill: "Language Skills",
+  aboutPersonalCertifications: 'Certifications',
 } as const;

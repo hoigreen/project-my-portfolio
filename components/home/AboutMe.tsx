@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
 import { certificationsData, infoData, qualificationsData, skillsData, toolsData } from '@/lib/datas/about-me';
 import { Briefcase, GraduationCap } from 'lucide-react';
 import Image from 'next/image';
+import { getI18n } from '@/locales/server';
 
 interface ExperienceDataObject {
   company: string;
@@ -18,16 +19,18 @@ interface EducationDataObject {
   years: string;
 }
 
-const AboutMe = () => {
+const AboutMe = async ({ locale }: { locale: string }) => {
   const getData = (arr: any, title: string) => {
-    return arr.find((item: any) => item.title === title);
+    return arr[locale].find((item: any) => item.title === title);
   };
 
+  const t = await getI18n()
+
   return (
-    <section className="xl:h-[860px] pb-12 xl:py-24">
+    <section className="pb-12 xl:py-24">
       <div className='container mx-auto'>
         <h2 className='section-title mb-8 xl:mb-16 mx-auto'>
-          About me
+          {t('aboutHeader')}
         </h2>
 
         <div className='flex flex-col xl:flex-row'>
@@ -41,21 +44,21 @@ const AboutMe = () => {
           <div className='flex-1'>
             <Tabs defaultValue='personal'>
               <TabsList className='w-full grid xl:grid-cols-3 xl:max-w-[520px] xl:border dark:border-none'>
-                <TabsTrigger className='w-[162px] xl:w-auto' value='personal'>Personal Information</TabsTrigger>
-                <TabsTrigger className='w-[162px] xl:w-auto' value='qualifications'>Qualifications Information</TabsTrigger>
-                <TabsTrigger className='w-[162px] xl:w-auto' value='skills'>Skills Information</TabsTrigger>
+                <TabsTrigger className='w-[162px] xl:w-auto' value='personal'>{t('aboutButtonPersonal')}</TabsTrigger>
+                <TabsTrigger className='w-[162px] xl:w-auto' value='qualifications'>{t('aboutButtonQualification')}</TabsTrigger>
+                <TabsTrigger className='w-[162px] xl:w-auto' value='skills'>{t('aboutButtonSkills')}</TabsTrigger>
               </TabsList>
 
               <div className='text-lg mt-12 xl:mt-8'>
                 <TabsContent value='personal' >
                   <div className='text-center xl:text-left'>
-                    <h3 className='h3 mb-4'>LET ME INTRODUCE MYSELF</h3>
+                    <h3 className='h3 mb-4 uppercase'>{t('aboutPersonalHeader')}</h3>
                     <p className='subtitle max-w-xl mx-auto xl:mx-0'>
-                      I specialize in crafting intuitive website with cutting-edge technology, delivering dynamic and engaging user experiences.
+                      {t('aboutPersonalDescription')}
                     </p>
 
                     <div className='grid xl:grid-cols-2 gap-4 mb-12'>
-                      {infoData.map((item, index) =>
+                      {infoData[locale].map((item, index) =>
                         <div key={index} className='flex items-center gap-x-4 mx-auto xl:mx-0'>
                           <div className='text-primary'>{item.icon}</div>
                           <div>{item.text}</div>
@@ -64,13 +67,13 @@ const AboutMe = () => {
                     </div>
 
                     <div className='flex flex-col gap-y-2 mb-12'>
-                      <div className='text-primary'>Language Skills</div>
+                      <div className='text-primary'>{t('aboutPersonalLanguageSkill')}</div>
                       <div className="border-b border-border"></div>
                       <div>Certificate of English B1</div>
                     </div>
 
                     <div className='flex flex-col gap-y-2 mb-12'>
-                      <div className='text-primary'>Certifications</div>
+                      <div className='text-primary'>{t('aboutPersonalCertifications')}</div>
                       <div className="border-b border-border"></div>
                       {certificationsData.map((item, index) =>
                         <div key={index} className='flex justify-between items-center'>
@@ -142,7 +145,7 @@ const AboutMe = () => {
                     <h3 className='h3 mb-8'>My Skills</h3>
 
                     <div className='grid grid-cols-1 xl:grid-cols-2'>
-                      {skillsData.map((type, index) =>
+                      {skillsData[locale].map((type, index) =>
                         <div className='mb-16' key={index}>
                           <div className='text-xl font-semibold mb-2 text-primary'>{type.title}</div>
                           <div className='border-b border-border mb-4'></div>
