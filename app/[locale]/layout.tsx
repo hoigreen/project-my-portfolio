@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 const RootLayout = ({ children, params }: { children: React.ReactNode, params: { lang: string } }) => {
   return (
     <html
-      lang={params.lang}
+      lang='en'
       suppressContentEditableWarning
     >
       <head />
