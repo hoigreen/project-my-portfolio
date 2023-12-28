@@ -18,10 +18,6 @@ interface EducationDataObject {
   years: string;
 }
 
-interface SkillsDataObject {
-  name: string;
-}
-
 const AboutMe = () => {
   const getData = (arr: any, title: string) => {
     return arr.find((item: any) => item.title === title);

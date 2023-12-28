@@ -9,7 +9,7 @@ export default function Page({ params: { locale } }: { params: { locale: string 
   return (
     <main>
       <Provider locale={locale}>
-        <Profile locale={locale} />
+        <Profile />
         <AboutMe />
         <MyRoles />
         <ProjectFeatured />

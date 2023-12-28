@@ -8,11 +8,7 @@ import { RiArrowDownSLine, RiBook2Fill, RiBriefcase4Fill } from 'react-icons/ri'
 import MyImage from './MyImage'
 import { getI18n } from '@/locales/server'
 
-interface ProfileProps {
-  locale: string
-}
-
-const Profile = async ({ locale }: ProfileProps) => {
+const Profile = async () => {
   const t = await getI18n();
 
   return (
