@@ -20,7 +20,7 @@ const BadgeProfile = (props: BadgeProps) => {
           {props.endCountText}
         </div>
 
-        <div className='max-w-[80px] leading-none text-[16px] font-medium text-black'>{props.badgeText}</div>
+        <div className='max-w-[80px] text-[16px] font-medium text-black'>{props.badgeText}</div>
       </div>
     </div>
   )
