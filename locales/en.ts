@@ -17,5 +17,6 @@ export default {
   aboutPersonalDescription: "I specialize in creating intuitive websites with cutting-edge technology, building great functionalities to deliver a dynamic and engaging user experience.",
   aboutPersonalLanguageSkill: "Language Skills",
   aboutPersonalCertifications: 'Certifications',
-  roleHeader: "My Roles"
+  roleHeader: "My Roles",
+  projectHeader: "Projects Featured"
 } as const;

@@ -18,5 +18,6 @@ export default {
   aboutPersonalDescription: "Tớ chuyên tạo trang web trực quan với công nghệ tiên tiến, xây dựng các chức năng tuyệt vời để mang lại trải nghiệm năng động và hấp dẫn cho người dùng.",
   aboutPersonalLanguageSkill: "Ngoại ngữ",
   aboutPersonalCertifications: "Chứng chỉ",
-  roleHeader: "Vai trò"
+  roleHeader: "Vai trò",
+  projectHeader: "Dự án nổi bật"
 } as const;
