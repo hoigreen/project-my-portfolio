@@ -12,7 +12,7 @@ const Profile = async () => {
   const t = await getI18n();
 
   return (
-    <section className="py-12 xl:py-23 h-[84vh] xl:pt-28 bg-home bg-no-repeat bg-cover bg-bottom dark:bg-none">
+    <section className="py-12 xl:py-23 xl:h-[84vh] xl:pt-28 bg-home bg-no-repeat bg-cover bg-bottom dark:bg-none">
       <div className="container mx-auto">
         <div className='flex justify-between gap-x-8'>
           <div className='flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left'>
