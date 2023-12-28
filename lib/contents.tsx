@@ -6,7 +6,6 @@ interface DictionaryEntry {
   profileButtonCV: string
   profileBadgeExperience: string
   profileBadgeUniversity: string
-
   logoImageAlt: string
 }
 

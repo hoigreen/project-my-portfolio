@@ -10,7 +10,7 @@ const Logo = ({ lang }: { lang: string }) => {
         src='/logo.png'
         width={100}
         height={40}
-        alt={dictionary[lang].logoImageAlt}
+        alt={dictionary[lang]?.logoImageAlt}
       />
     </Link>
   )

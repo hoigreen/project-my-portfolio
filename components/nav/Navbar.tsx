@@ -6,17 +6,18 @@ import React from 'react'
 import { links } from '@/lib/datas/nabar-links'
 
 interface NavbarProps {
+  lang: string,
   containerStyles: string,
   linkStyles: string,
   underlineStyles?: string,
 }
 
-const Navbar = ({ containerStyles, linkStyles, underlineStyles }: NavbarProps) => {
+const Navbar = ({ lang, containerStyles, linkStyles, underlineStyles }: NavbarProps) => {
   const path = usePathname()
 
   return (
     <nav className={`${containerStyles}`}>
-      {links.map((link, index) =>
+      {links[lang]?.map((link, index) =>
         <Link
           href={link.path}
           key={index}
