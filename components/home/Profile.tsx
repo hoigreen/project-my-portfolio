@@ -6,28 +6,32 @@ import Social from './Social'
 import BadgeProfile from './BadgeProfile'
 import { RiArrowDownSLine, RiBook2Fill, RiBriefcase4Fill } from 'react-icons/ri'
 import MyImage from './MyImage'
+import { dictionary } from '@/lib/contents'
 
-const Profile = () => {
+interface ProfileProps {
+  lang: string
+}
+
+const Profile = ({ lang }: ProfileProps) => {
   return (
     <section className="py-12 xl:py-23 h-[84vh] xl:pt-28 bg-home bg-no-repeat bg-cover bg-bottom dark:bg-none">
       <div className="container mx-auto">
         <div className='flex justify-between gap-x-8'>
           <div className='flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left'>
-            <div className='text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]'>Fullstack Web Developer</div>
-            <h1 className='h1 mb-4'>Hello, my name is Truong Quoc Hoi</h1>
+            <div className='text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]'>
+              {dictionary[lang]?.profilePosition}
+            </div>
+            <h1 className='h1 mb-4'>{dictionary[lang]?.profileHeader}</h1>
             <p className='subtitle max-w-[490px] mx-auto xl:mb-0 xl:mx-0 pb-4'>
-              Hello and welcome to my portfolio! I&apos;m a Fullstack Web Developer.
-              <br />
-              <br />
-              Proficient in both front-end and back-end technologies, I specialize in creating seamless and engaging user experiences.
+              {dictionary[lang]?.profileDescription}
             </p>
 
             <div className='flex flex-col gap-3 md:flex-row mx-auto xl:mx-0 mb-12'>
               <Link href='/contact'>
-                <Button className='gap-x-2'>Contact for work <Send size={16} /></Button>
+                <Button className='gap-x-2'>{dictionary[lang]?.profileButtonContact} <Send size={16} /></Button>
               </Link>
               <Link href='/cv/CV - TruongQuocHoi - Fullstack Web Developer.pdf' target='_blank'>
-                <Button variant='secondary' className='gap-x-2'>Get my CV <Download size={16} /></Button>
+                <Button variant='secondary' className='gap-x-2'>{dictionary[lang]?.profileButtonCV} <Download size={16} /></Button>
               </Link>
             </div>
 
@@ -43,14 +47,14 @@ const Profile = () => {
               containerStyles='absolute top-[12%] -left-[5rem]'
               icon={<RiBriefcase4Fill />}
               endCountNum={0.5}
-              badgeText='Year of Experience'
+              badgeText={dictionary[lang].profileBadgeExperience}
             />
 
             <BadgeProfile
               containerStyles='absolute top-[76%] -right-[5rem]'
               icon={<RiBook2Fill />}
               endCountNum={4}
-              badgeText='Years in University'
+              badgeText={dictionary[lang].profileBadgeUniversity}
             />
 
             <div className='bg-home_shape2_light dark:bg-home_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2'>

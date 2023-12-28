@@ -4,10 +4,10 @@ import MyRoles from "@/components/home/MyRoles";
 import Profile from "@/components/home/Profile";
 import ProjectFeatured from "@/components/home/ProjectFeatured";
 
-export default function Home({ params }: { params: { lang: string } }) {
+export default function Page({ params }: { params: { lang: string } }) {
   return (
     <main className="">
-      <Profile />
+      <Profile lang={params.lang} />
       <AboutMe />
       <MyRoles />
       <ProjectFeatured />
