@@ -1,48 +1,13 @@
-console.log('Loaded VI');
+console.log('Đã tải ngôn ngữ: Tiếng Việt');
 
 export default {
-  hello: 'Xin chào',
-  welcome: 'Hello {name}!',
-  'about.you': 'Hello {name}! You have {age} yo',
-  'scope.test': 'A scope',
-  'scope.more.test': 'A scope',
-  'scope.more.param': 'A scope with {param}',
-  'scope.more.and.more.test': 'A scope',
-  'scope.more.stars#one': '1 star on GitHub',
-  'scope.more.stars#other': '{count} stars on GitHub',
-  'missing.translation.in.fr': 'This should work',
-  'cows#one': 'A cow',
-  'cows#other': '{count} cows',
+  profilePosition: "Lập trình viên Full-stack",
+  profileHeader: "Xin chào, tớ là Trương Quốc Hội.",
+  profileDescription: `Xin chào và chào mừng đến với danh mục đầu tư của tớ! Tớ là Nhà phát triển web Fullstack.
+    Tớ có kinh nghiệm làm việc cả công nghệ front-end và back-end, tớ chuyên tạo ra trải nghiệm người dùng liền mạch và hấp dẫn.`,
+  profileButtonContact: "Liên hệ với tớ ngay",
+  profileButtonCV: 'Tải xuống CV của tớ',
+  profileBadgeExperience: 'Năm kinh nghiệm',
+  profileBadgeUniversity: 'Năm Đại học',
+  logoImageAlt: 'Logo trang portfolio của tôi'
 } as const;
-
-// We can also write locales using nested objects
-// export default {
-//   hello: 'Hello',
-//   welcome: 'Hello {name}!',
-//   about: {
-//     you: 'Hello {name}! You have {age} yo',
-//   },
-//   scope: {
-//     test: 'A scope',
-//     more: {
-//       test: 'A scope',
-//       param: 'A scope with {param}',
-//       and: {
-//         more: {
-//           test: 'A scope',
-//         },
-//       },
-//       'stars#one': '1 star on GitHub',
-//       'stars#other': '{count} stars on GitHub',
-//     },
-//   },
-//   missing: {
-//     translation: {
-//       in: {
-//         fr: 'This should work',
-//       },
-//     },
-//   },
-//   'cows#one': 'A cow',
-//   'cows#other': '{count} cows',
-// } as const;

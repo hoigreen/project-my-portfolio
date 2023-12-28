@@ -3,15 +3,18 @@ import Cta from "@/components/home/Cta";
 import MyRoles from "@/components/home/MyRoles";
 import Profile from "@/components/home/Profile";
 import ProjectFeatured from "@/components/home/ProjectFeatured";
+import { Provider } from "./provider";
 
-export default function Page({ params }: { params: { lang: string } }) {
+export default function Page({ params: { locale } }: { params: { locale: string } }) {
   return (
-    <main className="">
-      <Profile lang={params.lang} />
-      <AboutMe />
-      <MyRoles />
-      <ProjectFeatured />
-      <Cta />
+    <main>
+      <Provider locale={locale}>
+        <Profile locale={locale} />
+        <AboutMe />
+        <MyRoles />
+        <ProjectFeatured />
+        <Cta />
+      </Provider>
     </main>
   )
 }
