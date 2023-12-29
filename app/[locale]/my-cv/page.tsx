@@ -13,7 +13,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url,
 ).toString();
 
-const MyCV = () => {
+const MyCV = ({ params: { locale } }: { params: { locale: string } }) => {
   const [widthScreen, setWidthScreen] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 0)
 
   useEffect(() => setWidthScreen(window.innerWidth), []);
@@ -21,7 +21,12 @@ const MyCV = () => {
   return (
     <section className="min-h-screen pt-12">
       <div className="container mx-auto">
-        <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">My CV</h2>
+        <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
+          {locale === "en" ?
+            'My CV' :
+            'CV của tớ'
+          }
+        </h2>
 
         <Document
           file={'/cv/CV - TruongQuocHoi - Fullstack Web Developer.pdf'}
@@ -33,7 +38,12 @@ const MyCV = () => {
 
         <div className='w-full flex justify-center gap-3 md:flex-row mx-auto xl:mx-0 mb-12'>
           <Link href='/cv/CV - TruongQuocHoi - Fullstack Web Developer.pdf'>
-            <Button className='gap-x-2'>Download my CV <Download size={16} /></Button>
+            <Button className='gap-x-2'>
+              {locale === "en" ?
+                'Download my CV' :
+                'Tải CV'
+              }
+              <Download size={16} /></Button>
           </Link>
         </div>
       </div>
