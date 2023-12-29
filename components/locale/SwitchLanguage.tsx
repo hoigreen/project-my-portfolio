@@ -59,7 +59,7 @@ export function Switch({ locale }: { locale: string }) {
               height={20}
               alt='Việt Nam'
             />
-            <p>Việt Nam</p>
+            <p>Tiếng Việt</p>
           </div>
         </DropdownMenuItem>
       </DropdownMenuContent>
