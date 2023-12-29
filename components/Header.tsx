@@ -20,7 +20,7 @@ const Header = ({ locale }: { locale: string }) => {
   }, [])
 
   return (
-    <header className={`${header ? 'py-4 bg-white shadow-lg dark:bg-accent' : 'py-6 dark:bg-transparent'} sticky top-0 z-30 transition-all ${pathname === '/' && 'bg-[#e6f3da]'}`}>
+    <header className={`${header ? 'py-4 bg-white shadow-lg dark:bg-accent' : 'py-6 dark:bg-transparent'} sticky top-0 z-30 transition-all ${pathname === `/${locale}` && 'bg-[#e6f3da]'}`}>
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <Logo />
