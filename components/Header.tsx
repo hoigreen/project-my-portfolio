@@ -6,6 +6,7 @@ import MobileNavbar from "./nav/MobileNavbar"
 import Navbar from "./nav/Navbar"
 import { ThemeToggler } from "./theme/ThemeToggler"
 import { usePathname } from "next/navigation"
+import { Switch } from "./locale/SwitchLanguage"
 
 const Header = ({ locale }: { locale: string }) => {
   const [header, setHeader] = useState(false)
@@ -25,13 +26,14 @@ const Header = ({ locale }: { locale: string }) => {
         <div className="flex justify-between items-center">
           <Logo />
 
-          <div className="flex items-center gap-x-6">
+          <div className="flex items-center gap-x-4">
             <Navbar
               locale={locale}
-              containerStyles="hidden xl:flex gap-x-8 items-center"
+              containerStyles="hidden xl:flex gap-x-8 items-center px-8"
               linkStyles="relative hover:text-primary transition-all"
               underlineStyles="absolute left-0 top-full h-[2px] bg-primary w-full rounded-full"
             />
+            <Switch locale={locale} />
             <ThemeToggler />
             <div className="xl:hidden">
               <MobileNavbar locale={locale} />
