@@ -9,7 +9,7 @@ const Logo = () => {
         src='/logo.png'
         width={100}
         height={40}
-        alt='Logo of my portfolio page'
+        alt='Logo my portfolio'
       />
     </Link>
   )
