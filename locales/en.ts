@@ -18,5 +18,8 @@ export default {
   aboutPersonalLanguageSkill: "Language Skills",
   aboutPersonalCertifications: 'Certifications',
   roleHeader: "My Roles",
-  projectHeader: "Projects Featured"
+  projectHeader: "Projects Featured",
+  ctaHeader: "Ready to elevate your digital experience?",
+  ctaDescription: "Let's collaborate on innovative software solutions that drive results. Whether you have a specific project in mind or just want to explore the possibilities, I&apos;m here to help. Contact me to start the conversation.",
+  ctaButton: 'Contact me for work'
 } as const;

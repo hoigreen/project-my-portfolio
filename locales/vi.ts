@@ -19,5 +19,8 @@ export default {
   aboutPersonalLanguageSkill: "Ngoại ngữ",
   aboutPersonalCertifications: "Chứng chỉ",
   roleHeader: "Vai trò",
-  projectHeader: "Dự án nổi bật"
+  projectHeader: "Dự án nổi bật",
+  ctaHeader: 'Sẵn sàng nâng cao trải nghiệm của bạn cùng tớ?',
+  ctaDescription: 'Hãy cộng tác để tìm ra các giải pháp phần mềm sáng tạo mang lại kết quả. Cho dù bạn đang nghĩ đến một dự án cụ thể hay chỉ muốn khám phá các khả năng, tôi luôn sẵn sàng trợ giúp. Hãy liên hệ với tớ để bắt đầu cuộc trò chuyện nhé.',
+  ctaButton: "Liên hệ với tớ ngay"
 } as const;
