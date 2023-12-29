@@ -1,6 +1,7 @@
 console.log('Đã tải ngôn ngữ: Tiếng Việt');
 
 export default {
+  hoigreen: 'Trương Quốc Hội',
   profilePosition: "Lập trình viên Full-stack",
   profileHeader: "Xin chào, tớ là Trương Quốc Hội.",
   profileDescription: `Xin chào và chào mừng đến với danh mục đầu tư của tớ! Tớ là Nhà phát triển web Fullstack.
@@ -9,7 +10,7 @@ export default {
   profileButtonCV: 'Tải xuống CV của tớ',
   profileBadgeExperience: 'Năm kinh nghiệm',
   profileBadgeUniversity: 'Năm Đại học',
-  logoImageAlt: 'Logo trang portfolio của tôi',
+  logoImageAlt: 'Logo trang portfolio của tờ',
   aboutHeader: 'Về tớ',
   aboutButtonPersonal: 'Thông tin cá nhân',
   aboutButtonQualification: 'Thông tin chuyên môn',
@@ -21,6 +22,16 @@ export default {
   roleHeader: "Vai trò",
   projectHeader: "Dự án nổi bật",
   ctaHeader: 'Sẵn sàng nâng cao trải nghiệm của bạn cùng tớ?',
-  ctaDescription: 'Hãy cộng tác để tìm ra các giải pháp phần mềm sáng tạo mang lại kết quả. Cho dù bạn đang nghĩ đến một dự án cụ thể hay chỉ muốn khám phá các khả năng, tôi luôn sẵn sàng trợ giúp. Hãy liên hệ với tớ để bắt đầu cuộc trò chuyện nhé.',
-  ctaButton: "Liên hệ với tớ ngay"
+  ctaDescription: 'Hãy cộng tác để tìm ra các giải pháp phần mềm sáng tạo mang lại kết quả. Cho dù bạn đang nghĩ đến một dự án cụ thể hay chỉ muốn khám phá các khả năng, tớ luôn sẵn sàng trợ giúp. Hãy liên hệ với tớ để bắt đầu cuộc trò chuyện nhé.',
+  ctaButton: "Liên hệ với tớ ngay",
+  contactHello: "Nói 'Xin chào' với tớ đi",
+  contactHeader: "Liên hệ với tớ",
+  contactTitle: "Liên hệ vì công việc cùng tớ nào.",
+  contactDescription: "Cảm ơn vì bạn đã đến. Tớ rất vui vì bạn ghé thăm. Nếu bạn có điều gì muốn chia sẻ, đề xuất hoặc chỉ đơn giản là muốn trò chuyện, hãy liên lạc với tớ qua những cách sau:",
+  contactFormHeader: 'Liên hệ với tớ qua biểu mẫu',
+  contactFormInputName: "Điền vào tên của bạn ...",
+  contactFormInputEmail: "Điền vào địa chỉ email ...",
+  contactFormInputMessage: "Thông điệp của bạn ...",
+  contactFormButtonSubmit: 'Gửi cho tớ',
+
 } as const;
