@@ -4,8 +4,8 @@ export default {
   hoigreen: 'Trương Quốc Hội',
   profilePosition: "Lập trình viên Full-stack",
   profileHeader: "Xin chào, tớ là Trương Quốc Hội.",
-  profileDescription: `Xin chào và chào mừng đến với danh mục đầu tư của tớ! Tớ là Nhà phát triển web Fullstack.
-    Tớ có kinh nghiệm làm việc cả công nghệ front-end và back-end, tớ chuyên tạo ra trải nghiệm người dùng liền mạch và hấp dẫn.`,
+  profileDescription: `Xin chào và chào mừng đến với trang portfolio của tớ! Tớ là Nhà phát triển web Fullstack.
+    Tớ có kinh nghiệm làm việc ở cả vị trí Frontend và Backend, tớ chuyên tạo ra trải nghiệm người dùng liền mạch và hấp dẫn, đồng thời xây dựng các chức nắng làm cho website sống động và mang lại trỉa nghiệm trên cả tuyệt vời.`,
   profileButtonContact: "Liên hệ với tớ ngay",
   profileButtonCV: 'Tải xuống CV của tớ',
   profileBadgeExperience: 'Năm kinh nghiệm',
