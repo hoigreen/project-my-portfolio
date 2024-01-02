@@ -31,7 +31,7 @@ const infoData: Record<string, infoDataProps[]> = {
     },
     {
       icon: <MailIcon size={20} />,
-      text: 'hoi.truongquoc107@gmai.com'
+      text: 'hoi.truongquoc107@gmail.com'
     },
     {
       icon: <Calendar size={20} />,
@@ -57,7 +57,7 @@ const infoData: Record<string, infoDataProps[]> = {
     },
     {
       icon: <MailIcon size={20} />,
-      text: 'hoi.truongquoc107@gmai.com'
+      text: 'hoi.truongquoc107@gmail.com'
     },
     {
       icon: <Calendar size={20} />,
@@ -69,7 +69,7 @@ const infoData: Record<string, infoDataProps[]> = {
     },
     {
       icon: <HomeIcon size={20} />,
-      text: 'Quận 12, TPHCM, Việt'
+      text: 'Quận 12, TPHCM, Việt Nam'
     },
   ],
 }

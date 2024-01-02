@@ -18,6 +18,9 @@ export default {
   aboutPersonalDescription: "I specialize in creating intuitive websites with cutting-edge technology, building great functionalities to deliver a dynamic and engaging user experience.",
   aboutPersonalLanguageSkill: "Language Skills",
   aboutPersonalCertifications: 'Certifications',
+  aboutQualificationsHeader: 'My Beauty Journey',
+  aboutSkillsHeader: 'My Skills',
+  aboutSkillsTools: 'Tools I use',
   roleHeader: "My Roles",
   projectHeader: "Projects Featured",
   ctaHeader: "Ready to elevate your digital experience?",
@@ -32,4 +35,6 @@ export default {
   contactFormInputEmail: "Input your email address ...",
   contactFormInputMessage: "Input your message ...",
   contactFormButtonSubmit: 'Send to me',
+  education: 'Education',
+  experience: 'Experience'
 } as const;

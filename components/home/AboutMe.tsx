@@ -87,13 +87,13 @@ const AboutMe = async ({ locale }: { locale: string }) => {
 
                 <TabsContent value='qualifications' >
                   <div>
-                    <h3 className="h3 mb-8 text-center xl:text-left">My Beautiful Journey</h3>
+                    <h3 className="h3 mb-8 text-center xl:text-left uppercase">{t('aboutQualificationsHeader')}</h3>
                     <div className='grid xl:grid-cols-2 gap-y-12'>
                       <div className='flex flex-col gap-y-6'>
                         <div className='flex gap-x-4 items-center text-[22px] text-primary'>
                           <GraduationCap size={28} />
                           <h4 className="capitalize">
-                            {getData(qualificationsData, 'education').title}
+                            {t('education')}
                           </h4>
                         </div>
 
@@ -117,7 +117,7 @@ const AboutMe = async ({ locale }: { locale: string }) => {
                         <div className='flex gap-x-4 items-center text-[22px] text-primary'>
                           <Briefcase size={28} />
                           <h4 className="capitalize">
-                            {getData(qualificationsData, 'experience').title}
+                            {t('experience')}
                           </h4>
                         </div>
 
@@ -142,7 +142,7 @@ const AboutMe = async ({ locale }: { locale: string }) => {
 
                 <TabsContent value='skills' >
                   <div className='text-center xl:text-left'>
-                    <h3 className='h3 mb-8'>My Skills</h3>
+                    <h3 className='h3 mb-8'>{t('aboutSkillsHeader')}</h3>
 
                     <div className='grid grid-cols-1 xl:grid-cols-2'>
                       {skillsData[locale].map((type, index) =>
@@ -162,7 +162,7 @@ const AboutMe = async ({ locale }: { locale: string }) => {
                   </div>
 
                   <div className='text-center xl:text-left'>
-                    <h3 className='h3 mb-8'>Tools I use</h3>
+                    <h3 className='h3 mb-8'>{t('aboutSkillsTools')}</h3>
 
                     <div className='flex gap-x-12 justify-center xl:justify-start items-center'>
                       {toolsData.map((item, i) =>

@@ -20,7 +20,7 @@ const ProjectFeatured = ({ locale }: { locale: string }) => {
           <p className="subtitle mb-8">
             {locale === 'en' ?
               'Crafting innovative web solutions with Node.js and .NET Framework. Elevating projects with scalable backend magic.' :
-              'Xây dựng các giải pháp web sáng tạo với Node.js và .NET Framework. Nâng tầm dự án bằng phép thuật phụ trợ có thể mở rộng.'
+              'Xây dựng các giải pháp web sáng tạo với Node.js và .NET Framework. Nâng tầm dự án bằng các chức năng tuyệt vời để nâng cao trải nghiệm cho người dùng.'
             }
           </p>
           <Link href='/projects'>
