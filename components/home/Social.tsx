@@ -10,23 +10,23 @@ interface SocialProps {
 
 const icons = [
   {
-    path: '/',
+    path: 'https://www.facebook.com/hoigreen/',
     name: <RiFacebookFill />
   },
   {
-    path: '/',
+    path: 'https://www.linkedin.com/in/hoigreen/',
     name: <RiLinkedinFill />
   },
   {
-    path: '/',
+    path: 'https://github.com/hoigreen',
     name: <RiGithubFill />
   },
   {
-    path: '/',
+    path: 'https://www.youtube.com/channel/UCMMfe2g7nxbxou-Unb9n5qw',
     name: <RiYoutubeFill />
   },
   {
-    path: '/',
+    path: 'https://www.instagram.com/hoigreen/',
     name: <RiInstagramFill />
   }
 ]
