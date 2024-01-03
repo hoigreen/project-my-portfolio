@@ -5,12 +5,10 @@ import Logo from "./nav/Logo"
 import MobileNavbar from "./nav/MobileNavbar"
 import Navbar from "./nav/Navbar"
 import { ThemeToggler } from "./theme/ThemeToggler"
-import { usePathname } from "next/navigation"
 import { Switch } from "./locale/SwitchLanguage"
 
 const Header = ({ locale }: { locale: string }) => {
   const [header, setHeader] = useState(false)
-  const pathname = usePathname()
 
   useEffect(() => {
     const scrollPos = () => window.scrollY >= 50 ? setHeader(true) : setHeader(false)
@@ -21,7 +19,7 @@ const Header = ({ locale }: { locale: string }) => {
   }, [])
 
   return (
-    <header className={`${header ? 'py-4 bg-white shadow-lg dark:bg-accent' : 'py-6 dark:bg-transparent'} sticky top-0 z-30 transition-all ${pathname === `/${locale}` && 'bg-[#e6f3da]'}`}>
+    <header className={`${header ? 'py-4 bg-white shadow-lg dark:bg-accent' : 'py-6 dark:bg-transparent'} sticky top-0 z-30 transition-all bg-[#e6f3da]`}>
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <Logo />

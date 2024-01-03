@@ -1,8 +1,13 @@
+'use client'
+
+import { usePathname } from "next/navigation"
 import Social from "./home/Social"
 
-const Footer = () => {
+const Footer = ({ locale }: { locale: string }) => {
+  const pathname = usePathname()
+
   return (
-    <footer className="pt-12">
+    <footer className={`pt-24 ${pathname === `/${locale}` ? '' : 'bg-green-50 dark:bg-secondary'}`}>
       <div className="container mx-auto relative">
         <div className="flex flex-col items-center justify-between">
           <Social

@@ -20,7 +20,7 @@ const RootLayout = ({ children, params }: { children: React.ReactNode, params: {
         <ThemeProvider attribute='class' defaultTheme='light'>
           <Header locale={params.locale} />
           {children}
-          <Footer />
+          <Footer locale={params.locale} />
         </ThemeProvider>
       </body>
     </html>
