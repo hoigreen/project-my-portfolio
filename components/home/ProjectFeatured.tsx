@@ -13,7 +13,7 @@ import { getCurrentLocale } from '@/locales/server';
 
 const ProjectFeatured = ({ locale }: { locale: string }) => {
   return (
-    <section className="relative mb-12 xl:mb-48">
+    <section className="relative mt-24 mb-12 xl:mb-48">
       <div className="container mx-auto overflow-hidden">
         <div className="max-w-[400px] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start">
           <h2 className="section-title mb-4">{locale === 'en' ? 'Projects Featured' : 'Dự án nổi bật'}</h2>

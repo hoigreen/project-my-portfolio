@@ -39,7 +39,7 @@ const ProjectCard = ({ project }: any) => {
       </CardHeader>
 
 
-      <div className="h-full px-8 py-6">
+      <div className="h-[320px] overflow-y-scroll px-8 py-6 no-scrollbar">
         <Badge className="capitalize text-sm font-semibold mb-2 absolute top-4 left-5">{project.category}</Badge>
         <h4 className="h4 mb-2">{project.name}</h4>
         <p className="text-muted-foreground text-sm text-justify xl:text-lg">{project.description}</p>

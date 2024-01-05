@@ -27,7 +27,7 @@ const AboutMe = async ({ locale }: { locale: string }) => {
   const t = await getI18n()
 
   return (
-    <section className="pb-12 xl:py-24">
+    <section className="py-12 xl:py-24">
       <div className='container mx-auto'>
         <h2 className='section-title mb-8 xl:mb-16 mx-auto'>
           {t('aboutHeader')}
