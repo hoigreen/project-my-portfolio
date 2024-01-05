@@ -11,7 +11,7 @@ export function Switch({ locale }: { locale: string }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <div className='flex items-center justify-between gap-x-2'>
+        <div className='flex items-center justify-between max-sm:gap-x-0 gap-x-2'>
           {locale === 'en' ?
             <>
               <Image
@@ -20,7 +20,7 @@ export function Switch({ locale }: { locale: string }) {
                 height={20}
                 alt='English'
               />
-              <p>English</p>
+              <p className='max-sm:hidden'>English</p>
             </> :
             <>
               <Image
@@ -29,7 +29,7 @@ export function Switch({ locale }: { locale: string }) {
                 height={20}
                 alt='Việt Nam'
               />
-              <p>Tiếng Việt</p>
+              <p className='max-sm:hidden'>Tiếng Việt</p>
             </>
           }
         </div>
