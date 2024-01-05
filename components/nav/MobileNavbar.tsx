@@ -18,7 +18,7 @@ const MobileNavbar = ({ locale }: { locale: string }) => {
             <Navbar
               locale={locale}
               containerStyles='flex w-full flex-col items-end gap-y-6'
-              linkStyles='text-lg py-4 w-full text-right'
+              linkStyles='text-sm md:text-lg py-2 md:py-4 w-full text-right'
             />
           </div>
           <Social
