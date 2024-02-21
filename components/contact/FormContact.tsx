@@ -5,8 +5,7 @@ import { Input } from '../ui/input'
 import { MailIcon, MessageCircleIcon, Send, User } from 'lucide-react'
 import { Textarea } from '../ui/textarea'
 import { Button } from '../ui/button'
-import { useForm, ValidationError } from '@formspree/react';
-import { getI18n } from '@/locales/server'
+import { useForm } from '@formspree/react';
 import { usePathname } from 'next/navigation'
 
 const FormContact = () => {
