@@ -1,5 +1,3 @@
-console.log('Loaded: English');
-
 export default {
   hoigreen: 'Truong Quoc Hoi',
   profilePosition: "Fullstack Web Developer",
@@ -12,7 +10,7 @@ export default {
   logoImageAlt: 'Logo my portfolio',
   aboutHeader: 'About me',
   aboutButtonPersonal: 'Personal Information',
-  aboutButtonQualification: 'Qualificatión Information',
+  aboutButtonQualification: 'Qualification Information',
   aboutButtonSkills: 'Skills Information',
   aboutPersonalHeader: "LET ME INTRODUCE MYSELF",
   aboutPersonalDescription: "I specialize in creating intuitive websites with cutting-edge technology, building great functionalities to deliver a dynamic and engaging user experience.",

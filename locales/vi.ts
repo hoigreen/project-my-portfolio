@@ -1,5 +1,3 @@
-console.log('Đã tải ngôn ngữ: Tiếng Việt');
-
 export default {
   hoigreen: 'Trương Quốc Hội',
   profilePosition: "Lập trình viên Full-stack",

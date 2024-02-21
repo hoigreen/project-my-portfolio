@@ -94,6 +94,11 @@ const qualificationsData: Record<string, qualificationsDataProps[]> = {
           position: 'Fullstack Developer',
           time: '07/2023 - 12/2023',
         },
+        {
+          company: 'CODELIGHT Company Limited',
+          position: 'Frontend Developer',
+          time: '01/2024 - now',
+        },
       ],
     },
   ],
@@ -116,8 +121,13 @@ const qualificationsData: Record<string, qualificationsDataProps[]> = {
           position: 'Fullstack Developer',
           time: '07/2023 - 12/2023',
         },
+        {
+          company: 'Công ty TNHH CODELIGHT',
+          position: 'Frontend Developer',
+          time: '01/2024 - hiện tại',
+        },
       ],
-    },
+    }
   ]
 }
 
