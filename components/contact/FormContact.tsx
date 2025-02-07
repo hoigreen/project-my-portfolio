@@ -15,7 +15,7 @@ const FormContact = () => {
 
   useEffect(() => {
     if (pathname) setLocale(pathname.substring(1, 3))
-  }, [])
+  }, [pathname])
 
 
   useEffect(() => {

@@ -1,12 +1,12 @@
-import Link from 'next/link'
-import React from 'react'
-import { Button } from '../ui/button'
-import { Download, Send } from 'lucide-react'
-import Social from './Social'
-import BadgeProfile from './BadgeProfile'
-import { RiArrowDownSLine, RiBook2Fill, RiBriefcase4Fill } from 'react-icons/ri'
-import MyImage from './MyImage'
 import { getI18n } from '@/locales/server'
+import { Download, Send } from 'lucide-react'
+import Link from 'next/link'
+import { FaProjectDiagram } from "react-icons/fa"
+import { RiArrowDownSLine, RiBriefcase4Fill } from 'react-icons/ri'
+import { Button } from '../ui/button'
+import BadgeProfile from './BadgeProfile'
+import MyImage from './MyImage'
+import Social from './Social'
 
 const Profile = async () => {
   const t = await getI18n();
@@ -52,15 +52,15 @@ const Profile = async () => {
             <BadgeProfile
               containerStyles='absolute top-[12%] -left-[5rem]'
               icon={<RiBriefcase4Fill />}
-              endCountNum={0.5}
+              endCountNum={2}
               badgeText={t("profileBadgeExperience")}
             />
 
             <BadgeProfile
               containerStyles='absolute top-[76%] -right-[5rem]'
-              icon={<RiBook2Fill />}
+              icon={<FaProjectDiagram />}
               endCountNum={4}
-              badgeText={t("profileBadgeUniversity")}
+              badgeText={t("profileBadgeProject")}
             />
 
             <div className='bg-home_shape2_light dark:bg-home_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2'>

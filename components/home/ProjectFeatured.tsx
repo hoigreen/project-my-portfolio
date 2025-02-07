@@ -1,14 +1,12 @@
 'use client'
-import { projectsData } from '@/lib/datas/projects'
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { projectsData } from '@/lib/datas/projects';
+import Link from 'next/link';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
-import ProjectCard from '../project/ProjectCard'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import ProjectCard from '../project/ProjectCard';
 import { Button } from '../ui/button';
-import Link from 'next/link';
-import { getCurrentLocale } from '@/locales/server';
 
 
 const ProjectFeatured = ({ locale }: { locale: string }) => {
@@ -19,8 +17,8 @@ const ProjectFeatured = ({ locale }: { locale: string }) => {
           <h2 className="section-title mb-4">{locale === 'en' ? 'Projects Featured' : 'Dự án nổi bật'}</h2>
           <p className="subtitle mb-8">
             {locale === 'en' ?
-              'Crafting innovative web solutions with Node.js and .NET Framework. Elevating projects with scalable backend magic.' :
-              'Xây dựng các giải pháp web sáng tạo với Node.js và .NET Framework. Nâng tầm dự án bằng các chức năng tuyệt vời để nâng cao trải nghiệm cho người dùng.'
+              'Crafting innovative web solutions with amazing frontend and backend technologies. Elevating projects with unique features.' :
+              'Xây dựng các giải pháp web sáng tạo với các công nghệ frontend và backend tuyệt vời. Nâng tầm dự án bằng các chức năng tuyệt vời để nâng cao trải nghiệm cho người dùng.'
             }
           </p>
           <Link href='/projects'>
@@ -35,8 +33,8 @@ const ProjectFeatured = ({ locale }: { locale: string }) => {
 
         <div className='xl:max-w-[1000px] xl:absolute right-0 top-0'>
           <Swiper slidesPerView={1} breakpoints={{ 640: { slidesPerView: 2 } }} pagination={{ clickable: true }} modules={[Pagination]} className='h-[600px]'>
-            {projectsData[locale].map((project, i) =>
-              <SwiperSlide key={i}>
+            {projectsData[locale].slice(0, 3).map((project) =>
+              <SwiperSlide key={project.name}>
                 <ProjectCard project={project} />
               </SwiperSlide>
             )}

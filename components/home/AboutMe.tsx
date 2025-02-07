@@ -1,30 +1,18 @@
 
-import React from 'react'
-import MyImage from './MyImage';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
-import { certificationsData, infoData, qualificationsData, skillsData, toolsData } from '@/lib/datas/about-me';
+import { certificationsData, EducationData, ExperienceData, honorsAwardsData, infoData, qualificationsData, skillsData, toolsData } from '@/lib/datas/about-me';
+import { getI18n } from '@/locales/server';
 import { Briefcase, GraduationCap } from 'lucide-react';
 import Image from 'next/image';
-import { getI18n } from '@/locales/server';
-
-interface ExperienceDataObject {
-  company: string;
-  position: string;
-  time: string;
-}
-
-interface EducationDataObject {
-  university: string;
-  qualification: string;
-  years: string;
-}
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
+import MyImage from './MyImage';
 
 const AboutMe = async ({ locale }: { locale: string }) => {
-  const getData = (arr: any, title: string) => {
-    return arr[locale].find((item: any) => item.title === title);
-  };
-
   const t = await getI18n()
+
+  const educationsData = qualificationsData[locale].find((item) => item.title === 'education')?.data as EducationData[] | undefined
+  const experiencesData = qualificationsData[locale].find((item) => item.title === 'experience')?.data as ExperienceData[] | undefined
+
+
 
   return (
     <section className="py-12 xl:py-24">
@@ -43,10 +31,10 @@ const AboutMe = async ({ locale }: { locale: string }) => {
 
           <div className='flex-1'>
             <Tabs defaultValue='personal'>
-              <TabsList className='w-full grid xl:grid-cols-3 xl:max-w-[520px] xl:border dark:border-none'>
-                <TabsTrigger className='w-[162px] xl:w-auto' value='personal'>{t('aboutButtonPersonal')}</TabsTrigger>
-                <TabsTrigger className='w-[162px] xl:w-auto' value='qualifications'>{t('aboutButtonQualification')}</TabsTrigger>
-                <TabsTrigger className='w-[162px] xl:w-auto' value='skills'>{t('aboutButtonSkills')}</TabsTrigger>
+              <TabsList className='w-full grid xl:grid-cols-3 xl:max-w-2xl xl:border dark:border-none'>
+                <TabsTrigger className=' px-4' value='personal'>{t('aboutButtonPersonal')}</TabsTrigger>
+                <TabsTrigger className='px-4' value='qualifications'>{t('aboutButtonQualification')}</TabsTrigger>
+                <TabsTrigger className='px-4' value='skills'>{t('aboutButtonSkills')}</TabsTrigger>
               </TabsList>
 
               <div className='text-lg mt-12 xl:mt-8'>
@@ -62,6 +50,20 @@ const AboutMe = async ({ locale }: { locale: string }) => {
                         <div key={index} className='flex items-center gap-x-4 mx-auto xl:mx-0'>
                           <div className='text-primary'>{item.icon}</div>
                           <div>{item.text}</div>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className='flex flex-col gap-y-2 mb-12'>
+                      <div className='text-primary'>{t('aboutPersonalHonorsAwards')}</div>
+                      <div className="border-b border-border"></div>
+                      {honorsAwardsData[locale].map((item) =>
+                        <div key={item.name} className='flex justify-between gap-4'>
+                          <div className='flex flex-col gap-y-2 grow'>
+                            <div className='font-semibold'>{item.name}</div>
+                            <p className='italic text-sm text-muted-foreground'>{item.description}</p>
+                          </div>
+                          <div className='shrink-0 min-w-24'>{item.amount}</div>
                         </div>
                       )}
                     </div>
@@ -88,7 +90,7 @@ const AboutMe = async ({ locale }: { locale: string }) => {
                 <TabsContent value='qualifications' >
                   <div>
                     <h3 className="h3 mb-8 text-center xl:text-left uppercase">{t('aboutQualificationsHeader')}</h3>
-                    <div className='grid xl:grid-cols-2 gap-y-12'>
+                    <div className='flex flex-col gap-6 xl:gap-12'>
                       <div className='flex flex-col gap-y-6'>
                         <div className='flex gap-x-4 items-center text-[22px] text-primary'>
                           <GraduationCap size={28} />
@@ -98,8 +100,8 @@ const AboutMe = async ({ locale }: { locale: string }) => {
                         </div>
 
                         <div className='flex flex-col gap-y-8'>
-                          {getData(qualificationsData, 'education').data.map((item: EducationDataObject, i: number) =>
-                            <div className='flex gap-x-8 group' key={i}>
+                          {educationsData?.map((item) =>
+                            <div className='flex gap-x-8 group' key={item.university}>
                               <div className="h-[84px] w-[1px] bg-border relative ml-2">
                                 <div className="w-[11px] h-[11px] rounded-full bg-primary a absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-300"></div>
                               </div>
@@ -122,8 +124,8 @@ const AboutMe = async ({ locale }: { locale: string }) => {
                         </div>
 
                         <div className='flex flex-col gap-y-8'>
-                          {getData(qualificationsData, 'experience').data.map((item: ExperienceDataObject, i: number) =>
-                            <div className='flex gap-x-8 group' key={i}>
+                          {experiencesData?.map((item) =>
+                            <div className='flex gap-x-8 group' key={item.company}>
                               <div className="h-[84px] w-[1px] bg-border relative ml-2">
                                 <div className="w-[11px] h-[11px] rounded-full bg-primary a absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-300"></div>
                               </div>
@@ -145,35 +147,17 @@ const AboutMe = async ({ locale }: { locale: string }) => {
                     <h3 className='h3 mb-8'>{t('aboutSkillsHeader')}</h3>
 
                     <div className='grid grid-cols-1 xl:grid-cols-2'>
-                      {skillsData[locale].map((type, index) =>
-                        <div className='mb-16' key={index}>
+                      {skillsData.map((type) =>
+                        <div className='mb-16' key={type.title}>
                           <div className='text-xl font-semibold mb-2 text-primary'>{type.title}</div>
                           <div className='border-b border-border mb-4'></div>
                           <div>
-                            {type.data.map((item: any, i: number) =>
-                              <div key={i} className='w-2/4 text-center xl:text-left mx-auto xl:mx-0'>
-                                <div>{item.name}</div>
+                            {type.data.map((item) =>
+                              <div key={item} className='text-center xl:text-left mx-auto xl:mx-0'>
+                                <div>{item}</div>
                               </div>
                             )}
                           </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className='text-center xl:text-left'>
-                    <h3 className='h3 mb-8'>{t('aboutSkillsTools')}</h3>
-
-                    <div className='flex gap-x-12 justify-center xl:justify-start items-center'>
-                      {toolsData.map((item, i) =>
-                        <div key={i}>
-                          <Image
-                            src={item.imagePath}
-                            width={50}
-                            height={50}
-                            priority
-                            alt=''
-                          />
                         </div>
                       )}
                     </div>

@@ -1,3 +1,4 @@
+import en from '@/locales/en'
 import { Calendar, GraduationCap, HomeIcon, MailIcon, Phone, User2 } from 'lucide-react'
 
 interface infoDataProps {
@@ -5,18 +6,26 @@ interface infoDataProps {
   text: string
 }
 
-interface qualificationsDataProps {
-  title: string
-  data: any
+export interface EducationData {
+  university: string,
+  qualification: string,
+  years: string,
 }
 
-interface Skill {
-  name: string;
+export interface ExperienceData {
+  company: string,
+  position: string,
+  time: string,
+}
+
+interface qualificationsDataProps {
+  title: 'education' | 'experience'
+  data: EducationData[] | ExperienceData[]
 }
 
 interface skillsDataProps {
   title: string
-  data: Skill[]
+  data: string[]
 }
 
 const infoData: Record<string, infoDataProps[]> = {
@@ -39,7 +48,7 @@ const infoData: Record<string, infoDataProps[]> = {
     },
     {
       icon: <GraduationCap size={20} />,
-      text: 'Student at University of Transports Ho Chi Minh City (UTH)'
+      text: 'Student at University of Information Technology (UIT)'
     },
     {
       icon: <HomeIcon size={20} />,
@@ -65,7 +74,7 @@ const infoData: Record<string, infoDataProps[]> = {
     },
     {
       icon: <GraduationCap size={20} />,
-      text: 'Sinh viên năm 4 tại Trường Đại học Giao Thông Vận Tải TPHCM (UTH)'
+      text: 'Trường Đại học Công nghệ Thông tin TPHCM (UIT)'
     },
     {
       icon: <HomeIcon size={20} />,
@@ -80,9 +89,14 @@ const qualificationsData: Record<string, qualificationsDataProps[]> = {
       title: 'education',
       data: [
         {
+          university: 'University of Information Technology (UIT)',
+          qualification: 'Master of Science in Information Technology',
+          years: '12/2024 - now',
+        },
+        {
           university: 'University of Transports Ho Chi Minh City (UTH)',
           qualification: 'Bachelor of Information Technology',
-          years: '2020 - now',
+          years: '10/2020 - 10/2024',
         },
       ]
     },
@@ -90,14 +104,14 @@ const qualificationsData: Record<string, qualificationsDataProps[]> = {
       title: 'experience',
       data: [
         {
+          company: 'CODELIGHT LLC',
+          position: 'Frontend Engineer',
+          time: '01/2024 - now',
+        },
+        {
           company: 'NAISCORP Information Technology Service Joint Stock Company',
           position: 'Fullstack Developer',
           time: '07/2023 - 12/2023',
-        },
-        {
-          company: 'CODELIGHT Company Limited',
-          position: 'Frontend Developer',
-          time: '01/2024 - now',
         },
       ],
     },
@@ -106,6 +120,11 @@ const qualificationsData: Record<string, qualificationsDataProps[]> = {
     {
       title: 'education',
       data: [
+        {
+          university: 'Trường Đại học Công nghệ Thông tin TPHCM (UIT)',
+          qualification: 'Thạc sĩ Công nghệ Thông tin',
+          years: '10/2020 - 10/2024',
+        },
         {
           university: 'Trường Đại học Giao Thông Vận Tải (UTH)',
           qualification: 'Chuyên ngành Công nghệ thông tin',
@@ -117,190 +136,101 @@ const qualificationsData: Record<string, qualificationsDataProps[]> = {
       title: 'experience',
       data: [
         {
+          company: 'Công ty TNHH CODELIGHT',
+          position: 'Frontend Engineer',
+          time: '01/2024 - hiện tại',
+        },
+        {
           company: 'Công ty Cổ phần Giải pháp Công nghệ Thông Tin Naiscorp',
           position: 'Fullstack Developer',
           time: '07/2023 - 12/2023',
         },
-        {
-          company: 'Công ty TNHH CODELIGHT',
-          position: 'Frontend Developer',
-          time: '01/2024 - hiện tại',
-        },
       ],
     }
   ]
-}
+} as const;
 
-const skillsData: Record<string, skillsDataProps[]> = {
-  en: [
-    {
-      title: 'Web Front-end Technologies',
-      data: [
-        {
-          name: 'HTML, CSS',
-        },
-        {
-          name: 'SCSS',
-        },
-        {
-          name: 'Tailwind CSS',
-        },
-        {
-          name: 'ReactJS',
-        },
-        {
-          name: 'NextJS',
-        }
-      ]
-    },
-    {
-      title: 'Programming Languages',
-      data: [
-        {
-          name: 'Javascript',
-        },
-        {
-          name: 'Typescript',
-        },
-        {
-          name: 'C#',
-        },
-      ]
-    },
-    {
-      title: 'Web Back-end Technologies',
-      data: [
-        {
-          name: 'NodeJS',
-        },
-        {
-          name: 'ExpressJS',
-        },
-        {
-          name: 'Socket.IO',
-        },
-        {
-          name: 'Redis',
-        },
-        {
-          name: '.NET Framework',
-        }
-      ]
-    },
-    {
-      title: 'Databases',
-      data: [
-        {
-          name: 'MongoDB',
-        },
-        {
-          name: 'MySQL',
-        },
-        {
-          name: 'MS SQL Server',
-        }
-      ]
-    },
-    {
-      title: 'Source controls',
-      data: [
-        {
-          name: 'Git',
-        },
-        {
-          name: 'Gitlab',
-        },
-        {
-          name: 'BitBucket',
-        }
-      ]
-    }
-  ],
-  vi: [
-    {
-      title: 'Công nghệ Web phía Front-end',
-      data: [
-        {
-          name: 'HTML, CSS',
-        },
-        {
-          name: 'SCSS',
-        },
-        {
-          name: 'Tailwind CSS',
-        },
-        {
-          name: 'ReactJS',
-        },
-        {
-          name: 'NextJS',
-        }
-      ]
-    },
-    {
-      title: 'Ngôn ngữ lập trình',
-      data: [
-        {
-          name: 'Javascript',
-        },
-        {
-          name: 'Typescript',
-        },
-        {
-          name: 'C#',
-        },
-      ]
-    },
-    {
-      title: 'Công nghệ phía Back-end',
-      data: [
-        {
-          name: 'NodeJS',
-        },
-        {
-          name: 'ExpressJS',
-        },
-        {
-          name: 'Socket.IO',
-        },
-        {
-          name: 'Redis',
-        },
-        {
-          name: '.NET Framework',
-        }
-      ]
-    },
-    {
-      title: 'Cơ sở dữ liệu',
-      data: [
-        {
-          name: 'MongoDB',
-        },
-        {
-          name: 'MySQL',
-        },
-        {
-          name: 'MS SQL Server',
-        }
-      ]
-    },
-    {
-      title: 'Công cụ quản lý mã nguồn',
-      data: [
-        {
-          name: 'Git',
-        },
-        {
-          name: 'Gitlab',
-        },
-        {
-          name: 'BitBucket',
-        }
-      ]
-    }
-  ]
-}
+const skillsData: skillsDataProps[] = [
+  {
+    title: 'Front-end',
+    data: [
+      'HTML',
+      'CSS / SCSS / TailwindCSS',
+      'ReactJS',
+      'NextJS',
+      'Zustand',
+      'React Query',
+      'GraphQL',
+      'SASS',
+      'Shadcn/ui',
+      'WebSocket',
+    ]
+  },
+  {
+    title: 'Back-end',
+    data: [
+      'NodeJS',
+      'ExpressJS',
+      'Socket.IO',
+      'RESTful API',
+      'GraphQL',
+    ]
+  },
+  {
+    title: 'Programming Languages',
+    data: [
+      'Typescript',
+      'Javascript',
+      'C++'
+    ]
+  },
+  {
+    title: 'Databases',
+    data: [
+      'MongoDB',
+      'MySQL',
+      'MS SQL Server',
+    ]
+  },
+  {
+    title: 'Authentication & Security',
+    data: [
+      'Single Sign-On (SSO)',
+      'JSON Web Token (JWT)',
+    ]
+  },
+  {
+    title: 'Cloud & DevOps',
+    data: [
+      'AWS',
+      'Docker',
+      'Cloud Computing',
+      'Novu',
+      'Linux',
+      'Nginx',
+    ]
+  },
+  {
+    title: 'Source controls',
+    data: [
+      'Git',
+      'GitHub',
+      'Gitlab',
+      'BitBucket',
+    ]
+  },
+  {
+    title: 'Methodologies',
+    data: [
+      'Science Research Method',
+      'Critical Thinking',
+      'Agile',
+      'Scrum',
+      'Kanban',
+      'Waterfall',
+    ]
+  }
+] as const;
 
 const toolsData = [
   {
@@ -322,19 +252,37 @@ const toolsData = [
 
 const certificationsData = [
   {
-    name: 'HTML, CSS, Javascript. (F8 - fullstack.edu.vn)',
-    time: '2021'
-  },
-  {
     name: 'Javascript DSA (freecodecamp.org)',
     time: '2022'
   },
+  {
+    name: 'HTML, CSS, Javascript. (F8 - fullstack.edu.vn)',
+    time: '2021'
+  },
 ]
+
+const honorsAwardsData: Record<string, { name: string, description: string, amount: string }[]> = {
+  en: [
+    {
+      name: 'Academic Incentive Scholarship',
+      description: 'Scholarship for students with high academic performance - UTH',
+      amount: '4/8 semester'
+    }
+  ],
+  vi: [
+    {
+      name: 'Học bổng học tập kỳ năm học',
+      description: 'Học bổng học tập kỳ năm học - UTH',
+      amount: '4/8 học kỳ'
+    }
+  ]
+} as const;
 
 export {
   infoData,
   qualificationsData,
   skillsData,
   toolsData,
-  certificationsData
+  certificationsData,
+  honorsAwardsData
 }
