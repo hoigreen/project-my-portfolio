@@ -4,6 +4,12 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/context/ThemeContext'
+import dynamic from 'next/dynamic';
+
+const TopProgressBar = dynamic(
+  () => import('@/components/TopProgressBar'),
+  { ssr: false },
+);
 
 const playpenSans = Playpen_Sans({ weight: "400", subsets: ['vietnamese'] })
 
@@ -17,6 +23,7 @@ const RootLayout = ({ children, params }: { children: React.ReactNode, params: {
     <html lang='en' suppressContentEditableWarning>
       <head />
       <body className={playpenSans.className}>
+        <TopProgressBar />
         <ThemeProvider attribute='class' defaultTheme='light'>
           <Header locale={params.locale} />
           {children}
