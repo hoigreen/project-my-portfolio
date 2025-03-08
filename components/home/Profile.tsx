@@ -33,7 +33,7 @@ const Profile = async () => {
                   <Send size={16} />
                 </Button>
               </Link>
-              <Link href='/cv/CV - TruongQuocHoi - Fullstack Web Developer.pdf' target='_blank'>
+              <Link href='/cv/CV_TruongQuocHoi.pdf' target='_blank'>
                 <Button variant='secondary' className='gap-x-2'>
                   {t('profileButtonCV')}
                   <Download size={16} />

@@ -29,7 +29,7 @@ const MyCV = ({ params: { locale } }: { params: { locale: string } }) => {
         </h2>
 
         <Document
-          file={'/cv/CV - TruongQuocHoi - Fullstack Web Developer.pdf'}
+          file={'/cv/CV_TruongQuocHoi.pdf'}
           className="mx-16 mb-8 xl:mb-16 flex flex-col justify-center items-center border border-primary/40 rounded-lg"
         >
           <Page pageNumber={1} scale={widthScreen < 768 ? 0.6 : 2} />
@@ -37,7 +37,7 @@ const MyCV = ({ params: { locale } }: { params: { locale: string } }) => {
         </Document>
 
         <div className='w-full flex justify-center gap-3 md:flex-row mx-auto xl:mx-0 mb-12'>
-          <Link href='/cv/CV - TruongQuocHoi - Fullstack Web Developer.pdf'>
+          <Link href='/cv/CV_TruongQuocHoi.pdf'>
             <Button className='gap-x-2'>
               {locale === "en" ?
                 'Download my CV' :
